@@ -3,7 +3,7 @@ This library contains `useragents.json` and small JS library to pick random user
 
 # Installation
 ```
-npm --save i useragents 
+npm --save i useragentsdata 
 ```
 
 # Use Data in your own app
