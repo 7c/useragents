@@ -6,6 +6,7 @@ function randomUseragent(byPopularity=true) {
         var r = (Math.random()*Object.keys(useragents.useragents).length).toFixed(0)
         var ky = Object.keys(useragents.useragents)[r]
         var ua = useragents.useragents[ky]
+        ua.ua = ky
         return ua        
     }
 
@@ -15,6 +16,7 @@ function randomUseragent(byPopularity=true) {
     for(var i in useragents.useragents) {
         var agent = useragents.useragents[i]
         if (rnd>total && rnd<=total+agent.popularity) {
+            agent.ua = i
             return agent            
         }
         total+=agent.popularity

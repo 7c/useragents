@@ -26,19 +26,30 @@ Sometimes one might need up2date and real Useragents for different projects and 
 These useragents are from real webvisitors and are anonimized. A typical UA data looks like:
 
 ```
-{ popularity: 40,
-  agent:
-   { family: 'Other',
-     major: '0',
-     minor: '0',
-     patch: '0',
-     device: Device { family: 'Other', major: '0', minor: '0', patch: '0' },
-     os: OperatingSystem { family: 'Other', major: '0', minor: '0', patch: '0' } },
-  os: { family: 'Other', major: '0', minor: '0', patch: '0' },
-  device: { family: 'Other', major: '0', minor: '0', patch: '0' },
-  popularityRate: 0.00006121783547966891 }
+{
+      "popularity": 53,
+      "agent": {
+        "family": "Chrome",
+        "major": "69",
+        "minor": "0",
+        "patch": "3497",
+        "device": {
+          "family": "Other",
+          "major": "0",
+          "minor": "0",
+          "patch": "0"
+        },
+        "os": {
+          "family": "Windows",
+          "major": "8",
+          "minor": "0",
+          "patch": "0"
+        }
+      },
+      "popularityRate": 0.0007017353385310296
+    }
 ```
 
-The agent,os,device properties are prepared by using https://github.com/3rd-Eden/useragent library. `popularity` is the number of times we have seen this UA. In this example this UA was seen 40 times among whole logging-period and the `popularityRate` is the % amount from all other UserAgents
+The agent,os,device properties are prepared by using https://github.com/3rd-Eden/useragent library. `popularity` is the number of times we have seen this UA. In this example this UA was seen 53 times among whole logging-period and the `popularityRate` is the % amount from all other UserAgents
 
 This data might grow during the time but mathematically this data should be equal to browser market share because it is taken from sites with a lot of traffic.
