@@ -8,12 +8,12 @@ npm --save i useragentsdata
 
 # Use Data in your own app
 ```
-var { useragents } = require('useragents')
+var { useragents } = require('useragentsdata')
 console.log(useragents)
 ```
 # Take random Useragent
 ```
-var { randomUseragent } = require('useragents')
+var { randomUseragent } = require('useragentsdata')
 console.log(`Random useragent by popularity:`,randomUseragent(true))
 console.log(`Random useragent by randomity:`,randomUseragent(false))
 ```
