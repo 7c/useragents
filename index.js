@@ -21,7 +21,6 @@ function UseragentByFamily(browserFamily,osFamily=false){
     while(r==amount)
     r = parseInt((Math.random()*amount).toFixed(0))
     var id = 0
-    console.log(`amount:${amount} r=${r}`)
     for(var i in useragents.useragents) 
     {
         var agent = useragents.useragents[i]
@@ -30,7 +29,6 @@ function UseragentByFamily(browserFamily,osFamily=false){
             
             // console.log(id,r)
             if (id==r) { 
-                console.log(`<<<<<<<<<<<<<`,agent)
                 agent.ua = i; return agent; 
             }
             id++
