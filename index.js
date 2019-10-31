@@ -17,18 +17,26 @@ function UseragentByFamily(browserFamily,osFamily=false){
     for(var i in useragents.useragents)
         amount+= (useragents.useragents[i].agent.family.toLowerCase()===browserFamily.toLowerCase() && (osFamily==false || useragents.useragents[i].agent.os.family.toLowerCase()===osFamily.toLowerCase())) ?1:0
     if (amount===0) return null
-    var r = (Math.random()*amount).toFixed(0)
-    console.log(`amount=${amount}`)
-    console.log(`r=${r}`)
+    var r = amount
+    while(r==amount)
+    r = parseInt((Math.random()*amount).toFixed(0))
     var id = 0
+    console.log(`amount:${amount} r=${r}`)
     for(var i in useragents.useragents) 
     {
         var agent = useragents.useragents[i]
-        if (agent.agent.family.toLowerCase()===browserFamily.toLowerCase() && (osFamily==false || agent.agent.os.family.toLowerCase()===osFamily.toLowerCase())) {
-            if (id==r) { agent.ua = i; return agent; }
+        if (agent.agent.family.toLowerCase()===browserFamily.toLowerCase() 
+            && (osFamily==false || agent.agent.os.family.toLowerCase()===osFamily.toLowerCase())) {
+            
+            // console.log(id,r)
+            if (id==r) { 
+                console.log(`<<<<<<<<<<<<<`,agent)
+                agent.ua = i; return agent; 
+            }
             id++
         }
     }
+    return null
 }
 
 function randomUseragent(byPopularity=true) {
