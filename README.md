@@ -7,15 +7,60 @@ npm --save i useragentsdata
 ```
 
 # Use Data in your own app
+this is raw access to useragents, so you can process it with your own functions
 ```
 var { useragents } = require('useragentsdata')
 console.log(useragents)
 ```
-# Take random Useragent
+# Taking random Useragent
+returns an agent object
 ```
 var { randomUseragent } = require('useragentsdata')
 console.log(`Random useragent by popularity:`,randomUseragent(true))
 console.log(`Random useragent by randomity:`,randomUseragent(false))
+```
+
+# Taking Useragent by BrowserFamily or/and OsFamily
+the osFamily is optional
+```
+var { UseragentByFamily } = require('useragentsdata')
+console.log(`Random Chrome UserAgent on a Mac OS:`,UseragentByFamily('chrome','Mac OS X'))
+```
+
+
+# BrowserFamilies
+```
+var { UseragentBrowserFamilies } = require('useragentsdata')
+console.log(`Browser Families:\n`,UseragentBrowserFamilies())
+```
+
+returns
+```
+ [ 'Chrome',
+  'Firefox',
+  'QQ Browser',
+  'Other',
+  'Yandex Browser',
+  'Coc Coc',
+  'Iron',
+  'Firefox Mobile',
+  'Opera',
+  'Mobile Safari',
+  'UC Browser',
+  'Chromium',
+  'Vivaldi',
+  'Chrome Mobile',
+  'Dragon',
+  'Android',
+  'Mobile Safari UI/WKWebView',
+  'Edge',
+  'Safari',
+  'IE',
+  'Baiduspider',
+  'Nokia OSS Browser',
+  'Mail.ru Chromium Browser',
+  'Chrome Mobile WebView',
+  'Chrome Mobile iOS' ]
 ```
 
 
