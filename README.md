@@ -12,6 +12,7 @@ this is raw access to useragents, so you can process it with your own functions
 var { useragents } = require('useragentsdata')
 console.log(useragents)
 ```
+
 # Taking random Useragent
 returns an agent object
 ```
