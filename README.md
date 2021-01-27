@@ -13,7 +13,7 @@ var { useragents } = require('useragentsdata')
 console.log(useragents)
 ```
 
-# Taking random Useragent
+# picking a random Useragent
 returns an agent object
 ```
 var { randomUseragent } = require('useragentsdata')

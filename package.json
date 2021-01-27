@@ -1,18 +1,11 @@
 {
   "name": "useragentsdata",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "axios": "^0.21.1",
-    "chalk": "^4.1.0",
-    "lodash": "^4.17.20",
-    "minimist": "^1.2.5",
-    "useragent": "^2.3.0"
-  }
+  "license": "ISC"
 }
