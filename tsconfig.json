@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {        
+    "target": "es2017",          
+    "experimentalDecorators": true,                   
+    "emitDecoratorMetadata": true,                    
+    "module": "commonjs",        
+    "moduleResolution" : "Node",
+    "esModuleInterop": true,                  
+    "forceConsistentCasingInFileNames": true,            
+    "strict": true,
+    "noImplicitReturns": true, 
+    "noUnusedLocals": false, 
+    "noFallthroughCasesInSwitch": true, 
+    "noImplicitAny": true, 
+    "strictNullChecks": true, 
+    "strictFunctionTypes": true, 
+    "strictBindCallApply": true, 
+    "strictPropertyInitialization": true, 
+    "alwaysStrict": true, 
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "preserveConstEnums": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,      
+    "baseUrl": ".",
+    "outDir": "dist",
+    "rootDir": "src",
+    "paths": {
+      "@root/*": ["./*"],
+      "@models/*": ["./models/*"],
+      "@inc/*": ["./inc/ts/*"]
+    }
+  },
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.jest.ts",
+    "node_modules/",
+    "dist/"
+  ]
+}
