@@ -3,36 +3,48 @@ This library contains `useragents.json` and small JS library to pick random user
 
 # Installation
 ```
-npm --save i useragentsdata 
+npm i --save useragentsdata
 ```
+
+The package ships with TypeScript type definitions, so no extra `@types` package is needed.
 
 # Use Data in your own app
 this is raw access to useragents, so you can process it with your own functions
-```
-var { useragents } = require('useragentsdata')
-console.log(useragents)
+```ts
+import { useragents, UseragentsData } from 'useragentsdata'
+
+const data: UseragentsData = useragents
+// data.useragents is a Record<string, UserAgent> keyed by the raw UA string
+console.log(data.useragents)
 ```
 
 # picking a random Useragent
-returns an agent object
-```
-var { randomUseragent } = require('useragentsdata')
-console.log(`Random useragent by popularity:`,randomUseragent(true))
-console.log(`Random useragent by randomity:`,randomUseragent(false))
+returns an agent object (or `false` if none could be picked)
+```ts
+import { randomUseragent, UserAgent } from 'useragentsdata'
+
+const byPopularity: UserAgent | false = randomUseragent(true)
+const byRandomity: UserAgent | false = randomUseragent(false)
+console.log('Random useragent by popularity:', byPopularity)
+console.log('Random useragent by randomity:', byRandomity)
 ```
 
 # Taking Useragent by BrowserFamily or/and OsFamily
-the osFamily is optional
-```
-var { UseragentByFamily } = require('useragentsdata')
-console.log(`Random Chrome UserAgent on a Mac OS:`,UseragentByFamily('chrome','Mac OS X'))
+the osFamily is optional. Returns `false` if no browser family is given, or `null` if nothing matches
+```ts
+import { UseragentByFamily, UserAgent } from 'useragentsdata'
+
+const agent: UserAgent | false | null = UseragentByFamily('chrome', 'Mac OS X')
+console.log('Random Chrome UserAgent on a Mac OS:', agent)
 ```
 
 
 # BrowserFamilies
-```
-var { UseragentBrowserFamilies } = require('useragentsdata')
-console.log(`Browser Families:\n`,UseragentBrowserFamilies())
+```ts
+import { UseragentBrowserFamilies } from 'useragentsdata'
+
+const families: string[] = UseragentBrowserFamilies()
+console.log('Browser Families:\n', families)
 ```
 
 returns
@@ -69,9 +81,9 @@ returns
 Sometimes one might need up2date and real Useragents for different projects and need to spoof Useragent. This library is designed for that purphose. I will try to update this library frequently. The `useragents.json` is the value of this repository since this data will be kept recent. Imagine Mozilla releases new version, you would need to update all your libraries too with most recent version just to look legitime
 
 # Background
-These useragents are from real webvisitors and are anonimized. A typical UA data looks like:
+These useragents are from real webvisitors and are anonimized. A typical UA data looks like (a `UserAgent`):
 
-```
+```ts
 {
       "popularity": 53,
       "agent": {
